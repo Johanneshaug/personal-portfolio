@@ -1,0 +1,12 @@
+{
+    "name": "personal-portfolio",
+    "version": "1.0.0",
+    "description": "Personal Portfolio",
+    "main": "index.html",
+    "scripts": {
+        "deploy": "firebase deploy"
+    },
+    "dependencies": {
+        "firebase-tools": "^13.0.0"
+    }
+}
