@@ -15,8 +15,8 @@
     --steel-accent: #adb5bd;
     --primary-gradient: linear-gradient(135deg, #adb5bd 0%, #d4b483 100%);
 
-    --font-heading: 'Outfit', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --font-heading: Arial, sans-serif;
+    --font-body: Arial, sans-serif;
 
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
