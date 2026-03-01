@@ -392,6 +392,7 @@ function syncExtraColumns() {
 
         // Now line
         col.nowLineEl.style.top = `${(nowMin / 60) * HOUR_HEIGHT}px`;
+        col.nowLineEl.style.display = apptOverlapsMinute(nowMin, apptMin, currentDuration) ? 'none' : '';
 
         // Appointment reflection
         const diff = getOffsetDiff(now, sourceTz, tz);
@@ -416,9 +417,11 @@ function syncExtraColumns() {
             col.card2El.style.display = 'flex';
             col.card2El.style.top = '0px';
             col.card2El.style.height = `${(d2 / 60) * HOUR_HEIGHT}px`;
+            rangeWrapTxt.style.display = 'none'; // timespan only in lower part when split
             rangeWrapTxt.textContent = `00:00 - ${formatTime(Math.floor(d2 / 60), d2 % 60)}`;
         } else {
             col.card2El.style.display = 'none';
+            rangeWrapTxt.style.display = '';
             const eTotal = apptMin + currentDuration;
             const eH = Math.floor((eTotal % TOTAL_MINUTES) / 60);
             const eM = eTotal % 60;
@@ -501,12 +504,14 @@ function syncUI() {
         mainApptWrap.style.display = 'flex';
         mainApptWrap.style.top = `0px`;
         mainApptWrap.style.height = `${(d2 / 60) * HOUR_HEIGHT}px`;
+        sourceRangeWrapTxt.style.display = 'none'; // timespan only in lower part when split
 
         const endH = Math.floor(d2 / 60);
         const endM = d2 % 60;
         sourceRangeWrapTxt.textContent = `00:00 - ${formatTime(endH, endM)}`;
     } else {
         mainApptWrap.style.display = 'none';
+        sourceRangeWrapTxt.style.display = '';
 
         const endTotal = currentApptMin + currentDuration;
         const endH = Math.floor((endTotal % TOTAL_MINUTES) / 60);
@@ -549,6 +554,7 @@ function syncUI() {
         targetReflectionWrap.style.display = 'flex';
         targetReflectionWrap.style.top = `0px`;
         targetReflectionWrap.style.height = `${(duration2 / 60) * HOUR_HEIGHT}px`;
+        targetRangeWrapTxt.style.display = 'none'; // timespan only in lower part when split
 
         let endMinRaw = currentApptMin + diff + currentDuration;
         let endDayStatus = "";
@@ -563,6 +569,7 @@ function syncUI() {
     } else {
         // Normal block
         targetReflectionWrap.style.display = 'none';
+        targetRangeWrapTxt.style.display = '';
 
         const tEndTotal = targetApptMin + currentDuration;
         const tEndH = Math.floor((tEndTotal % TOTAL_MINUTES) / 60);
@@ -580,11 +587,30 @@ function syncUI() {
     document.getElementById('source-name').textContent = sourceTz.split('/').pop().replace(/_/g, ' ');
     document.getElementById('target-name').textContent = targetTz.split('/').pop().replace(/_/g, ' ');
 
+    // Hide now-lines when they touch the appointment box
+    document.getElementById('source-now-line').style.display =
+        apptOverlapsMinute(sNowMin, currentApptMin, currentDuration) ? 'none' : '';
+    document.getElementById('target-now-line').style.display =
+        apptOverlapsMinute(tNowMin, targetApptMin, currentDuration) ? 'none' : '';
+
     syncExtraColumns();
 }
 
 function formatTime(h, m) {
     return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}`;
+}
+
+// Returns true if nowMin (0-1439) falls inside the appointment span
+function apptOverlapsMinute(nowMin, apptStart, duration) {
+    const apptEnd = apptStart + duration;
+    if (apptEnd <= TOTAL_MINUTES) {
+        // Normal (non-wrapping) block
+        return nowMin >= apptStart && nowMin <= apptEnd;
+    } else {
+        // Block wraps past midnight
+        const wrappedEnd = apptEnd % TOTAL_MINUTES;
+        return nowMin >= apptStart || nowMin <= wrappedEnd;
+    }
 }
 
 // --- INTERACTION ---

@@ -354,6 +354,7 @@ select {
     border-right: 1px solid var(--glass-border);
     background: rgba(0, 0, 0, 0.1);
     z-index: 10;
+    overflow: hidden;
 }
 
 .timeline-column:last-child {
@@ -431,21 +432,21 @@ select {
     position: absolute;
     left: 4px;
     right: 4px;
-    background: var(--secondary);
-    /* Silver background */
-    color: #000;
+    background: #1a1a1a;
+    /* Dark surface */
+    color: var(--primary);
     border-radius: 4px;
     padding: 0 6px;
     cursor: grab;
-    z-index: 300;
-    /* On top of lines but under header (500) */
+    z-index: 20;
+    /* Above now-line (z-index: 5) but under header (500) */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     user-select: none;
     transition: transform 0.2s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.2s ease, opacity 0.2s ease;
     display: flex;
     flex-direction: row;
     /* Better for small heights */
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     border: 1px solid var(--primary);
     /* Tan border */
@@ -456,8 +457,6 @@ select {
 
 .appointment-card:active {
     cursor: grabbing;
-    transform: scale(1.02) translateY(-2px);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
 .appointment-card .title {
@@ -473,7 +472,7 @@ select {
     /* Extra bold for small text */
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
-    color: rgba(0, 0, 0, 0.8);
+    color: var(--primary);
 }
 
 /* Reflection card (the one in the second column) */
@@ -481,30 +480,26 @@ select {
     position: absolute;
     left: 4px;
     right: 4px;
-    background: rgba(173, 181, 189, 0.1);
-    /* Tint of silver, no border */
-    border: none;
+    background: #1a1a1a;
+    /* Dark surface */
+    border: 1px solid var(--primary);
+    /* Tan border */
     border-radius: 4px;
     padding: 0 6px;
-    z-index: 250;
+    z-index: 15;
+    /* Above now-line, below appointment card */
     pointer-events: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    backdrop-filter: blur(8px);
     overflow: hidden;
     gap: 4px;
     line-height: 1;
 }
 
-.reflection-card::after {
-    display: none;
-    /* Removing the extra pseudo border since the main card has a dashed border now */
-}
-
 .reflection-card .time-range {
-    color: var(--secondary);
+    color: var(--primary);
     font-weight: 800;
     font-size: 0.55rem;
     font-variant-numeric: tabular-nums;
