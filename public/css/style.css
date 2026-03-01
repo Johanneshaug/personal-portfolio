@@ -125,16 +125,8 @@ ul {
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-}
-
-.logo {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-color);
-    letter-spacing: -0.5px;
 }
 
 .nav-links {
@@ -177,7 +169,6 @@ ul {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -309,7 +300,6 @@ ul {
 .edu-card:hover {
     background: rgba(212, 180, 131, 0.05);
     border-color: var(--tan-accent);
-    transform: translateX(10px);
 }
 
 .edu-logo-wrapper {
@@ -406,6 +396,12 @@ ul {
     margin-bottom: var(--spacing-md);
 }
 
+.project-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
 .project-link {
     font-size: 0.9rem;
     color: var(--accent-color);
@@ -415,6 +411,15 @@ ul {
 .project-link:hover {
     text-decoration: underline;
 }
+
+.demo-link {
+    color: var(--tan-accent);
+}
+
+.demo-link:hover {
+    color: #fff;
+}
+
 
 /* Contact Section */
 .contact {
@@ -452,6 +457,20 @@ ul {
     color: var(--text-secondary);
     font-size: 0.8rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.built-with {
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.antigravity-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 600;
+    font-family: var(--font-heading);
 }
 
 /* Mobile Styles */

@@ -1,0 +1,6 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="128" fill="#000000"/>
+  <!-- Simplified 'J' that mimics a modern sans-serif like Outfit -->
+  <path d="M300 140V340C300 380 270 410 230 410C190 410 160 380 160 340" stroke="#d4b483" stroke-width="60" stroke-linecap="butt" stroke-linejoin="round"/>
+  <path d="M300 140H220" stroke="#d4b483" stroke-width="60" stroke-linecap="butt"/>
+</svg>

@@ -12,6 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;500;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!-- Placeholder for icons, usually FontAwesome or similar -->
 </head>
@@ -19,7 +20,6 @@
 <body>
     <header class="header">
         <nav class="nav container">
-
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -96,13 +96,30 @@
                 <div class="project-grid">
                     <!-- Personal Portfolio -->
                     <article class="project-card">
-
                         <div class="project-info">
-                            <h3>Personal Homepage</h3>
-                            <p>My modern, dark-themed personal homepage built with HTML, CSS, and Javascript, hosted on
-                                Google Cloud Firebase.</p>
-                            <a href="https://github.com/Johanneshaug/personal-portfolio" target="_blank"
-                                class="project-link">View on GitHub &rarr;</a>
+                            <h3>Personal Portfolio</h3>
+                            <p>My modern, dark-themed personal portfolio built with HTML, CSS & JS using <span
+                                    class="antigravity-text">Google Antigravity</span>, hosted on Google Cloud Firebase.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com/Johanneshaug/personal-portfolio" target="_blank"
+                                    class="project-link">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Timezone Converter -->
+                    <article class="project-card">
+                        <div class="project-info">
+                            <h3>Timezone Converter</h3>
+                            <p>A premium interactive timezone meeting planner with surgical precision. Features smooth
+                                physics, midnight boundaries handling, and a sophisticated tan/silver palette.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Johanneshaug/ChronoSync" target="_blank"
+                                    class="project-link">View on GitHub &rarr;</a>
+                                <a href="/timezoneconverter" target="_blank" class="project-link demo-link">View Demo
+                                    &rarr;</a>
+                            </div>
                         </div>
                     </article>
                 </div>
@@ -128,6 +145,8 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 Johannes Haug. All rights reserved.</p>
+            <p class="built-with">Built with HTML, CSS & JS using <span class="antigravity-text">Google
+                    Antigravity</span></p>
         </div>
     </footer>
 
