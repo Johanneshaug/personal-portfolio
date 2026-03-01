@@ -390,16 +390,16 @@ function syncExtraColumns() {
         document.getElementById(`extra-current-${col.id}`).textContent =
             `${time.h.toString().padStart(2, '0')}:${time.m.toString().padStart(2, '0')}`;
 
-        // Now line
-        col.nowLineEl.style.top = `${(nowMin / 60) * HOUR_HEIGHT}px`;
-        col.nowLineEl.style.display = apptOverlapsMinute(nowMin, apptMin, currentDuration) ? 'none' : '';
-
         // Appointment reflection
         const diff = getOffsetDiff(now, sourceTz, tz);
         let apptMin = currentApptMin + diff;
         let dayStatus = '';
         if (apptMin >= TOTAL_MINUTES) { dayStatus = ' (+1d)'; apptMin %= TOTAL_MINUTES; }
         else if (apptMin < 0) { dayStatus = ' (-1d)'; apptMin = (apptMin + TOTAL_MINUTES) % TOTAL_MINUTES; }
+
+        // Now line
+        col.nowLineEl.style.top = `${(nowMin / 60) * HOUR_HEIGHT}px`;
+        col.nowLineEl.style.display = apptOverlapsMinute(nowMin, apptMin, currentDuration) ? 'none' : '';
 
         const sH = Math.floor(apptMin / 60);
         const sM = apptMin % 60;
