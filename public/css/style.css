@@ -413,7 +413,7 @@ ul {
 }
 
 .demo-link {
-    color: var(--tan-accent);
+    color: var(--accent-color);
 }
 
 .demo-link:hover {
