@@ -8,3 +8,5 @@ ui-debug.log
 # Node
 node_modules/
 npm-debug.log
+test_ai.py
+test_edgar.py

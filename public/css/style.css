@@ -132,6 +132,7 @@ ul {
 .nav-links {
     display: flex;
     gap: var(--spacing-md);
+    align-items: center;
 }
 
 .nav-links a {
@@ -141,6 +142,22 @@ ul {
 
 .nav-links a:hover {
     color: var(--accent-color);
+}
+
+.lang-btn {
+    background: rgba(212, 180, 131, 0.1);
+    color: var(--tan-accent) !important;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(212, 180, 131, 0.3);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.lang-btn:hover {
+    background: rgba(212, 180, 131, 0.2);
+    border-color: var(--tan-accent);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */

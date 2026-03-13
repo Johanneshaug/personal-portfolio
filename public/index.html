@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de"> <!-- standard is German -->
 
 <head>
     <meta charset="UTF-8">
@@ -21,10 +21,11 @@
     <header class="header">
         <nav class="nav container">
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="nav-home">Home</a></li>
+                <li><a href="#about" data-i18n="nav-about">About</a></li>
+                <li><a href="#projects" data-i18n="nav-projects">Projects</a></li>
+                <li><a href="#contact" data-i18n="nav-contact">Contact</a></li>
+                <li><a href="#" id="lang-toggle" class="lang-btn">EN</a></li>
             </ul>
             <div class="hamburger">
                 <span></span>
@@ -37,12 +38,12 @@
     <main>
         <section id="home" class="hero section">
             <div class="container hero-content">
-                <h1 class="hero-title">Hello, I'm <span class="highlight">Johannes Haug</span>.</h1>
-                <p class="hero-subtitle">IT Specialist & Business Informatics Student at Munich University of Applied
+                <h1 class="hero-title" data-i18n="hero-title">Hello, I'm <span class="highlight">Johannes Haug</span>.</h1>
+                <p class="hero-subtitle" data-i18n="hero-subtitle">IT Specialist & Business Informatics Student at Munich University of Applied
                     Sciences.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero-btn-work">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero-btn-contact">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-background-elements">
@@ -53,11 +54,9 @@
 
         <section id="about" class="about section">
             <div class="container">
-                <h2 class="section-title">Career & Education</h2>
+                <h2 class="section-title" data-i18n="about-title">Career & Education</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I am a passionate developer and IT specialist based in Munich, bridging the gap between
-                            infrastructure and software engineering.</p>
 
                         <div class="education-cards">
                             <!-- HM München Card -->
@@ -66,8 +65,8 @@
                                     <img src="assets/HM_Logo.jpg" alt="HM Logo" class="edu-logo">
                                 </div>
                                 <div class="edu-info">
-                                    <h3>Munich University of Applied Sciences (HM)</h3>
-                                    <p>B.Sc. Business Informatics – Information Technology</p>
+                                    <h3 data-i18n="edu-hm-title">Munich University of Applied Sciences (HM)</h3>
+                                    <p data-i18n="edu-hm-desc">B.Sc. Business Informatics – Information Technology</p>
                                     <span class="edu-date">2025 — 2029</span>
                                 </div>
                             </div>
@@ -78,9 +77,9 @@
                                     <img src="assets/ihk_schwaben_logo.jpeg" alt="IHK Schwaben Logo" class="edu-logo">
                                 </div>
                                 <div class="edu-info">
-                                    <h3>Apprenticeship</h3>
-                                    <p>IT Specialist for System Integration</p>
-                                    <span class="edu-date">Completed</span>
+                                    <h3 data-i18n="edu-ihk-title">Apprenticeship</h3>
+                                    <p data-i18n="edu-ihk-desc">IT Specialist for System Integration</p>
+                                    <span class="edu-date" data-i18n="edu-ihk-date">Completed</span>
                                 </div>
                             </div>
                         </div>
@@ -92,18 +91,18 @@
 
         <section id="projects" class="projects section">
             <div class="container">
-                <h2 class="section-title">Selected Projects</h2>
+                <h2 class="section-title" data-i18n="projects-title">Selected Projects</h2>
                 <div class="project-grid">
                     <!-- Personal Portfolio -->
                     <article class="project-card">
                         <div class="project-info">
-                            <h3>Personal Portfolio</h3>
-                            <p>My modern, dark-themed personal portfolio built with HTML, CSS & JS, hosted on Google
+                            <h3 data-i18n="proj-portfolio-title">Personal Portfolio</h3>
+                            <p data-i18n="proj-portfolio-desc">My modern, dark-themed personal portfolio built with HTML, CSS & JS, hosted on Google
                                 Cloud Firebase.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/Johanneshaug/personal-portfolio" target="_blank"
-                                    class="project-link">View on GitHub &rarr;</a>
+                                    class="project-link" data-i18n="proj-github">View on GitHub &rarr;</a>
                             </div>
                         </div>
                     </article>
@@ -111,12 +110,26 @@
                     <!-- Timezone Converter -->
                     <article class="project-card">
                         <div class="project-info">
-                            <h3>Timezone Converter</h3>
-                            <p>A draggable timezone planner that shows multiple timezones at once.</p>
+                            <h3 data-i18n="proj-tz-title">Timezone Converter</h3>
+                            <p data-i18n="proj-tz-desc">A draggable timezone planner that shows multiple timezones at once.</p>
                             <div class="project-links">
                                 <a href="https://github.com/Johanneshaug/ChronoSync" target="_blank"
-                                    class="project-link">View on GitHub &rarr;</a>
-                                <a href="/timezoneconverter" target="_blank" class="project-link demo-link">View Demo
+                                    class="project-link" data-i18n="proj-github-2">View on GitHub &rarr;</a>
+                                <a href="/timezoneconverter" target="_blank" class="project-link demo-link" data-i18n="proj-demo">View Demo
+                                    &rarr;</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Subnet Calculator -->
+                    <article class="project-card">
+                        <div class="project-info">
+                            <h3 data-i18n="proj-subnet-title">Subnet Calculator</h3>
+                            <p data-i18n="proj-subnet-desc">A simple network calculator to quickly compute subnet masks, host ranges, and broadcast addresses from CIDR notation.</p>
+                            <div class="project-links">
+                                <a href="https://github.com/Johanneshaug/Subnetcalculator" target="_blank"
+                                    class="project-link" data-i18n="proj-github-3">View on GitHub &rarr;</a>
+                                <a href="/subnetcalculator" target="_blank" class="project-link demo-link" data-i18n="proj-demo-subnet">View Demo
                                     &rarr;</a>
                             </div>
                         </div>
@@ -127,11 +140,11 @@
 
         <section id="contact" class="contact section">
             <div class="container">
-                <h2 class="section-title">Let's Connect</h2>
-                <p class="contact-text">Currently open to <strong>part-time opportunities</strong> and
+                <h2 class="section-title" data-i18n="contact-title">Let's Connect</h2>
+                <p class="contact-text" data-i18n="contact-text">Currently open to <strong>part-time opportunities</strong> and
                     <strong>internships</strong>.
                 </p>
-                <a href="mailto:johanneshaug@t-online.de" class="btn btn-primary">Say Hello</a>
+                <a href="mailto:johanneshaug@t-online.de" class="btn btn-primary" data-i18n="contact-btn">Say Hello</a>
                 <div class="social-links">
                     <a href="https://github.com/Johanneshaug" target="_blank" aria-label="GitHub">GitHub</a>
                     <a href="https://www.linkedin.com/in/johannes-haug-650a14347?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
@@ -143,7 +156,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Johannes Haug. All rights reserved.</p>
+            <p data-i18n="footer-text">&copy; 2026 Johannes Haug. All rights reserved.</p>
         </div>
     </footer>
 
