@@ -377,6 +377,8 @@ ul {
     transition: var(--transition);
     border: 1px solid rgba(173, 181, 189, 0.1);
     /* Steel tint border */
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -400,6 +402,9 @@ ul {
 
 .project-info {
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -415,42 +420,29 @@ ul {
 
 .project-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     align-items: center;
-    flex-wrap: wrap;
     margin-top: auto;
 }
 
 .project-link {
     font-size: 0.9rem;
-    color: var(--text-primary);
+    color: var(--text-secondary);
     font-weight: 500;
-    padding: 0.5rem 1rem;
-    border-radius: var(--border-radius);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    transition: var(--transition);
 }
 
 .project-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+    color: var(--text-primary);
     text-decoration: none;
 }
 
 .demo-link {
-    background: rgba(212, 180, 131, 0.1);
-    color: var(--tan-accent);
-    border: 1px solid rgba(212, 180, 131, 0.3);
+    color: var(--accent-color);
 }
 
 .demo-link:hover {
-    background: rgba(212, 180, 131, 0.2);
-    color: var(--tan-accent);
-    border-color: var(--tan-accent);
+    color: #fff;
 }
 
 
